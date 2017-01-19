@@ -6,11 +6,15 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Perfil de {{$user->name}}
+                    <p class="text-center">
+                        Perfil de {{$user->name}}
+                    </p>
+
                 </div>
 
                 <div class="panel-body">
-                    <img src="{{Storage::url($user->avatar)}}" width="70px" height="70px" style="border-radius: 50%;" alt="">
+
+                    <img class="img-responsive img-rounded" src="{{Storage::url($user->avatar)}}" alt="">
                 </div>
             </div>
         </div>
