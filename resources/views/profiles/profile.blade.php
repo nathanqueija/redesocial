@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <img class="img-responsive img-rounded" src="{{Storage::url($user->avatar)}}" alt="">
+                    <img class="img-responsive img-circle" src="{{Storage::url($user->avatar)}}" alt="">
                     <hr>
                     <p class="text-center">
                         @if(auth()->id() == $user->id)

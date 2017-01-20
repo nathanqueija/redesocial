@@ -8,8 +8,12 @@
                     <div class="panel-heading">Edite seu perfil</div>
 
                     <div class="panel-body">
-                        <form action="{{route('profile.update')}}" method="post">
+                        <form action="{{route('profile.update')}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
+                            <div class="form-group">
+                                <label for="avatar">Foto</label>
+                                <input type="file" class="form-control" name="avatar" accept="image/*">
+                            </div>
                             <div class="form-group">
                                 <label for="location">Local</label>
                                 <input type="text" class="form-control" name="location" value="{{$info->location}}" required>
