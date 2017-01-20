@@ -13,8 +13,13 @@
                 </div>
 
                 <div class="panel-body">
-
                     <img class="img-responsive img-rounded" src="{{Storage::url($user->avatar)}}" alt="">
+                    <hr>
+                    <p class="text-center">
+                        @if(auth()->id() == $user->id)
+                        <a href="{{route('profile.edit')}}" class="btn btn-lg btn-info">Editar perfil</a>
+                        @endif
+                    </p>
                 </div>
             </div>
         </div>
