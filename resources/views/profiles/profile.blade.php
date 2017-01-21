@@ -13,13 +13,29 @@
                 </div>
 
                 <div class="panel-body">
-                    <img class="img-responsive img-circle" src="{{Storage::url($user->avatar)}}" alt="">
+                    <img class="img-responsive img-circle" style="margin: auto; width: 50%;" src="{{Storage::url($user->avatar)}}" alt="">
                     <hr>
                     <p class="text-center">
                         @if(auth()->id() == $user->id)
                         <a href="{{route('profile.edit')}}" class="btn btn-lg btn-info">Editar perfil</a>
                         @endif
                     </p>
+                    <hr>
+                    <h3 class="text-center">Sobre mim</h3>
+                    <p class="text-center">
+                        Moro em <b>{{$user->profile->location}}</b>
+                    </p>
+                    <p class="text-center">
+                        {{$user->profile->about}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="body">
+                    <friend :profile_user_id="{{$user->id}}"></friend>
                 </div>
             </div>
         </div>

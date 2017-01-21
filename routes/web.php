@@ -19,6 +19,26 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/add',function (){
+    return \App\User::find(1)->add_friend(4);
+});
+
+Route::get('/add',function (){
+    return \App\User::find(1)->add_friend(4);
+});
+
+Route::get('/accept',function (){
+    return \App\User::find(1)->accept_friend(4);
+});
+
+Route::get('/friends',function (){
+    return \App\User::find(1)->friends();
+});
+
+Route::get('/pending',function (){
+    return \App\User::find(4)->pending_friend_requests();
+});
+
 Route::group(['middleware' => 'auth'], function (){
 
     Route::get('profile/{slug}', [
@@ -35,4 +55,10 @@ Route::group(['middleware' => 'auth'], function (){
         'uses' => 'ProfilesController@update',
         'as' => 'profile.update'
     ]);
+
+    Route::get('check_relationship_status/{id}', [
+        'uses' => 'FriendshipsController@check',
+        'as' => 'check'
+    ]);
+
 });

@@ -87,5 +87,17 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+
+<script>
+    @if(session()->has('success'))
+        noty({
+            type:'success',
+            layout:'bottomLeft',
+            text: '{{session('success')}}',
+            timeout: 5000,
+            progressBar: true
+    });
+    @endif
+</script>
 </body>
 </html>
